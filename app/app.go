@@ -17,8 +17,8 @@ type Secret struct {
 
 //LineSecret Secretファイルのline関連部分
 type LineSecret struct {
-	BotChannelSecret      string
-	BotChannelAccessToken string
+	BotChannelSecret      string `toml:"botChannelSecret"`
+	BotChannelAccessToken string `toml:"botChannelAccessToken"`
 }
 
 func HandleMassage(c *gin.Context) {

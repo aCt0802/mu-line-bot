@@ -15,13 +15,13 @@ type Config struct {
 
 //AppConfig Configファイルのアプリケーション関連
 type AppConfig struct {
-	Port string
+	Port string `toml:"port"`
 }
 
 func main() {
 	// config情報をTOMLファイルか読み出し
 	var config Config
-	_, err := toml.DecodeFile("./secret.toml", &config)
+	_, err := toml.DecodeFile("./config.toml", &config)
 	if err != nil {
 		fmt.Println(err)
 	}
